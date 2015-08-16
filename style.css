@@ -1,0 +1,77 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+button{
+    background: #549;
+    height: 21px;
+    border-radius: 0px;
+    border: none;
+}
+.wrapper{
+    width: 640px;
+}
+#dropbox{
+    position: absolute;
+    left: 0px;
+    top: 190px;
+    bottom: 0px;
+    width: 640px;
+    overflow-y: auto;
+    background: #423;
+
+    text-align: center;
+}
+label.myLabel input[type="file"] {
+    position: fixed;
+    top: -1000px;
+}
+.myLabel {
+    color: #439;
+    border: 3px dashed #545;
+    border-top: none;
+    font-size: 19px;
+}
+.track{
+    border-top: 1px solid black;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+/*end #dropbox*/
+.controll{
+    background: #423;
+    border: 3px dashed #545;
+    border-top: none;
+}
+/*в ff штука справа*/
+progress {
+    width: 100%; /*В ОБОИХ СЛУЧАЯХ ОБЩАЯ ДЛИНА*/
+    background: #549;
+    border: 0;
+    height: 18px;
+}
+/*в ff штука слева:*/
+progress::-moz-progress-bar {
+    background: rgb(30, 255, 50);
+}
+/*штука справа:*/
+progress::-webkit-progress-bar {
+    background: #549;
+}
+/*штука слева:*/
+progress::-webkit-progress-value {
+    background: rgb(30,255,50);
+}
+.buttons{
+    width: 640px;
+    text-align: center;
+}
+#volume{
+    color: white;
+}
+.info{
+    color: white;
+    position: absolute;
+    margin-top: -17px;
+}
+/*end .controll*/

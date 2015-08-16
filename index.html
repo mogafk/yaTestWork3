@@ -1,0 +1,43 @@
+<html>
+<head>
+    <title>Тестовое задание яндекс 3</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <link rel="stylesheet" href="style.css"/>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="vendor/id3tags/id3-minimized.js"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+<div class="wrapper">
+    <canvas class="visualizer" width="640" height="100"></canvas>
+
+    <div class="controll">
+        <progress id="progress-play" value="0" max="140">50</progress>
+        <div class="info"></div>
+        <div class="buttons">
+            <button class="play" enable>Play</button>
+            <button class="stop">Stop</button>
+            <button class="pause">Pause</button>
+            <br>
+            <button class="volume-decrease">volume-</button>
+            <span id="volume">20</span>
+            <button class="volume-increase">volume+</button>
+            <br/>
+            <button class="previous">prev</button>
+            <button class="next">next</button>
+        </div>
+
+    </div>
+
+    <div id="dropbox">
+        <div class="">
+            <label class="myLabel">
+                <input id="addmusic" type="file" muiltiple required/>
+                <span>click me or drop file</span>
+            </label>
+        </div>
+    </div>
+</div>
+</body>
+</html>

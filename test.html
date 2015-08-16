@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Project_test</title>
+    <style>
+        div {
+            background:olive;
+            border: 1px solid black;
+            border-radius: 1px solid black;
+            height: 50px;
+            width:100px;
+        }
+
+    </style>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+    <script>
+        //deep clone array узнаем новые вещи
+        var a =[[1], [2], [3]];
+        var b = $.extend(true, [], a);
+
+
+        function Game() {
+//            this.grid = [[0, 16, 16, 0],
+//                [2, 2, 2, 2],
+//                [4, 0, 4, 4],
+//                [8, 0, 8, 0]];
+            this.grid = [
+                [0,0,0,0,2,2,0,2,2,2,2],
+                [0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0]
+            ]
+        }
+
+        Game.prototype.right = function(){
+            console.log("before", $.extend(true, [], this.grid));
+            var grid = this.grid;
+            //итерация по каждой строке. высота - h
+//            for(var h=0; h<4; h++){
+            for(var h=0; h<11; h++){
+                //итерация по каждой колонке
+                //var gap;
+                for(var gap=10, c=10; c>=0; c--){
+                //    var gap = c;
+                    for(var current = grid[h][c], i=c-1; i>=0; i--){
+                        if(grid[h][i] == 0 && grid[h][i-1] != 0) {
+//                        if(grid[h][i] == 0) {
+//                            grid[h][i] = grid[h][c];
+//                            grid[h][c] = 0;
+                            gap = i;
+                            continue;
+                        }
+                        if(current == grid[h][i]){
+                            grid[h][c] = grid[h][i] = 0;
+                            grid[h][gap] = current*2;
+                            gap = i;
+//                            c = i;
+                            c = 9;
+                            break;
+                        }
+                    }
+                }
+                }
+            return grid;
+        };
+
+        var start = new Game();
+        console.log($.extend(true, [], start.right()))
+        //console.log($.extend(true, [], start.right()))
+    </script>
+</head>
+<body>
+
+<div>One </div>
+<div>Two </div>
+<div>three </div>
+<div>Four </div>
+<div>Five </div>
+<div>Six </div>
+
+
+</body>
+</html>
